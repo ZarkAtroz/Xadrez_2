@@ -1,6 +1,8 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import static com.sun.tools.javac.util.StringUtils.toUpperCase;
+
 //White pieces
 //"♜", "♞", "♝", "♛", "♚", "♝", "♞", "♜"
 //"♟", "♟", "♟", "♟", "♟", "♟", "♟", "♟"
@@ -13,10 +15,10 @@ public class Main {
 
     public static int LOOP = 0;
     public static int[] convertCoordinates(String input) {
-
         int[] coordinates = new int[2];
+
         coordinates[0] = Integer.parseInt(input.substring(0, 1)) - 1;
-        coordinates[1] = input.charAt(1) - 'A';
+        coordinates[1] = Character.toUpperCase(input.charAt(1)) - 'A';
 
         return coordinates;
     }
@@ -33,7 +35,7 @@ public class Main {
         Pieces.add(new Torre(0, 7, '♜', true, false));
 
         for (int i = 0; i < 8; i++) {
-            Pieces.add(new Peao(1, i, '♟', true, false));
+            //Pieces.add(new Peao(1, i, '♟', true, false));
         }
 
         //Black pieces
@@ -51,14 +53,13 @@ public class Main {
         }
     }
     public static void main(String[] args) {
-        ArrayList<Piece> Pieces = new ArrayList<>();
+        ArrayList<Piece> P = new ArrayList<>();
         Scanner scanner = new Scanner(System.in);
         Board board = new Board();
 
+        addPieces(P);
 
-        addPieces(Pieces);
-
-        board.printBoardPieces(Pieces);
+        board.printBoardPieces(P);
         int i = 0;
 
         while(true) {
@@ -66,7 +67,7 @@ public class Main {
             String input = scanner.nextLine();
             int[] coordinates = convertCoordinates(input);
 
-            board.findPiece(Pieces, coordinates[0], coordinates[1]);
+            board.findPiece(P, coordinates[0], coordinates[1]);
 
             System.out.print("INFORME A CORDENADA DE DESTINO: ");
             String input2 = scanner.nextLine();

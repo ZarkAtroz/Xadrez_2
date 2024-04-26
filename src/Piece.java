@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Piece {
     private int PosX;
     private int Posy;
@@ -21,11 +23,11 @@ public class Piece {
         this.PosX = PosX;
     }
 
-    public int getPosy() {
+    public int getPosY() {
         return Posy;
     }
 
-    public void setPosy(int Posy) {
+    public void setPosY(int Posy) {
         this.Posy = Posy;
     }
 
