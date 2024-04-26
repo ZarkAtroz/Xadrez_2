@@ -25,7 +25,7 @@ public class Main {
 
     public static void addPieces(ArrayList<Piece> Pieces){
         //White pieces
-        Pieces.add(new Torre(0, 0, '♜', true, false));
+        Pieces.add(new Torre(3, 0, '♜', true, false));
         Pieces.add(new Cavalo(0, 1, '♞', true, false));
         Pieces.add(new Bispo(0, 2, '♝', true, false));
         Pieces.add(new Rainha(0, 3, '♛', true, false));
@@ -35,7 +35,7 @@ public class Main {
         Pieces.add(new Torre(0, 7, '♜', true, false));
 
         for (int i = 0; i < 8; i++) {
-            //Pieces.add(new Peao(1, i, '♟', true, false));
+            Pieces.add(new Peao(1, i, '♟', true, false));
         }
 
         //Black pieces

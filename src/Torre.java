@@ -6,24 +6,23 @@ public class Torre extends Piece {
     }
 
     public boolean isBlocked(ArrayList<Piece> pieces, int x, int y){
+        int blocked = 0;
         for(Piece piece : pieces){
             if(piece.getPosX() == x + 1 && piece.getPosY() == y){
-                System.out.println("Existe uma peça bloqueando o caminho.");
-                return true;
-            }
-            if(piece.getPosX() == x - 1 && piece.getPosY() == y){
-                System.out.println("Existe uma peça bloqueando o caminho.");
-                return true;
-            }
-            if(piece.getPosX() == x && piece.getPosY() == y + 1){
-                System.out.println("Existe uma peça bloqueando o caminho.");
-                return true;
-            }
-            if(piece.getPosX() == x && piece.getPosY() == y - 1){
-                System.out.println("Existe uma peça bloqueando o caminho.");
-                return true;
+                blocked++;
+            } else if(piece.getPosX() == x - 1 && piece.getPosY() == y){
+                blocked++;
+            } else if(piece.getPosX() == x && piece.getPosY() == y + 1){
+                blocked++;
+            } else if(piece.getPosX() == x && piece.getPosY() == y - 1){
+                blocked++;
             }
         }
-        return false;
+
+        if (blocked > 0){
+            return true;
+        } else {
+            return false;
+        }
     }
 }
