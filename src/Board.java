@@ -8,18 +8,20 @@ public class Board {
     Bispo bispo = new Bispo(0, 0, ' ', false, false);
     Rainha rainha = new Rainha(0, 0, ' ', false, false);
     Rei rei = new Rei(0, 0, ' ', false, false);
+
+
     public  static  final String Letras = "            A           B          C           D          E          F           G           H\n";
     public static final String RESET = "\u001B[0m";
     public static final String RED = "\u001B[31m";
     public static final String CYAN = "\u001B[36m";
     public static final String BLUE = "\u001B[34m";
 
-    private final String[][] board = new String[8][8];
 
+    private final String[][] board = new String[8][8];
 
     public void printBoardPieces(ArrayList<Piece> pieces) {
         for (int i = 0; i < 8; i++) {
-            System.out.print(i+1 + "   ");
+            System.out.print(8-i + "   ");
             for (int j = 0; j < 8; j++) {
                 boolean hasPiece = false;
                 for (Piece piece : pieces) {
@@ -44,7 +46,6 @@ public class Board {
             if (piece.getPosX() == x && piece.getPosY() == y) {
                 System.out.println("Peça encontrada: " + piece.getIcon());
                 char icon = piece.getIcon();
-                pieceList(pieces, icon, x, y);
                 return;
             }
         }

@@ -1,8 +1,6 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import static com.sun.tools.javac.util.StringUtils.toUpperCase;
-
 //White pieces
 //"♜", "♞", "♝", "♛", "♚", "♝", "♞", "♜"
 //"♟", "♟", "♟", "♟", "♟", "♟", "♟", "♟"
@@ -60,6 +58,8 @@ public class Main {
         addPieces(P);
 
         board.printBoardPieces(P);
+
+
         int i = 0;
 
         while(true) {
@@ -78,15 +78,16 @@ public class Main {
         }
 
     }
-
-
-
 }
+
+//"♜", "♝", "♛", "♚", "♞", "♟"
+
 //mostrar tabuleiro oK
 //mostrar pecas oK
 
 //selecioanr peca oK
 //verifica se peça é valida oK
+//verificar se peca esta bloqueada
 //verificar se é possivel mover
 
 //pintar locais de movimento e verficar se é possivel mover
@@ -101,3 +102,45 @@ public class Main {
 //verificar se movimento é valido
 
 //mover peca
+
+
+
+    /*for (int i = 0; i < 8; i++) {
+            System.out.print(i+1 + "   ");
+            for (int j = 0; j < 8; j++) {
+                if (i == PosX && j == PosY) {
+                    System.out.print("[" + peca + "]");
+                } else if (i == PosX || j == PosY) {
+                    System.out.print(RED + "[ ]" + RESET);
+                } else {
+                    System.out.print("[ ]");
+                }
+            }
+            System.out.println();
+        }*/
+
+/*public void color(ArrayList<Piece> pieces, char peca, int PosX, int PosY){
+        //preciso que ele pinte o caminho em que a peca que ele encontrou pode andar
+        for (int i = 0; i < 8; i++) {
+            System.out.print(8-i + "   ");
+            for (int j = 0; j < 8; j++) {
+                boolean hasPiece = false;
+                for (Piece piece : pieces) {
+                    if (piece.getPosX() == i && piece.getPosY() == j) {
+                        System.out.print("[" + piece.getIcon() + "]");
+                        hasPiece = true;
+                        break;
+                    }
+                }
+                if (!hasPiece) {
+                    if (i == PosX || j == PosY) {
+                        System.out.print(RED + "[ ]" + RESET);
+                    } else {
+                        System.out.print("[ ]");
+                    }
+                }
+            }
+            System.out.println();
+        }
+
+    }*/

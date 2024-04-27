@@ -25,4 +25,21 @@ public class Torre extends Piece {
             return false;
         }
     }
+
+    public void color(char peca, int PosX, int PosY, String Letras, String RED, String RESET){
+        for (int i = 0; i < 8; i++) {
+            System.out.print(i+1 + "   ");
+            for (int j = 0; j < 8; j++) {
+                if (i == PosX && j == PosY) {
+                    System.out.print("[" + peca + "]");
+                } else if (i == PosX || j == PosY) {
+                    System.out.print(RED + "[ ]" + RESET);
+                } else {
+                    System.out.print("[ ]");
+                }
+            }
+            System.out.println();
+        }
+        System.out.print(Letras);
+    }
 }
